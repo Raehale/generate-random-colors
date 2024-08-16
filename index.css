@@ -1,3 +1,46 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #999;
+    width: 80vw;
+    height: auto;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 30px;
+    border-radius: 10px
+}
+
+.colors {
+    display: flex;
+}
+
+.color-display {
+    width: 200px;
+    height: 500px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.colors:first-child .color-display {
+    border-radius: 20px 0 0 5px;
+}
+
+.colors:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+p {
+    margin-bottom: 0;
+    text-align: center;
+}
+
 button {
     display: inline-block;
     padding: 0.5rem 1rem;
