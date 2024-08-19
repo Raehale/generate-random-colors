@@ -1,68 +1,216 @@
 html, body {
+    font-family: "Ubuntu", sans-serif;
+
     margin: 0;
     padding: 0;
+
+    background-color: #030723;
 }
 
+/***HEADING***/
+h1 {
+    color: #9691a7;
+    text-align: center;
+}
+
+/***MAIN CONTENT***/
 main {
     display: flex;
     flex-direction: column;
-    border: 1px solid #999;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(255,255,255,.1);
+
     width: 80vw;
     height: auto;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
+
+    margin: 30px auto 0;
+    border: 2px solid #4b697b;
+    border-radius: 8px;
     padding: 1rem;
-    margin-top: 30px;
-    border-radius: 10px
 }
 
-.colors {
-    display: flex;
-}
-
-.color-display {
-    width: 200px;
-    height: 500px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.colors:first-child .color-display {
-    border-radius: 20px 0 0 5px;
-}
-
-.colors:last-child {
-    border-radius: 0 5px 5px 0;
-}
-
-p {
-    margin-bottom: 0;
-    text-align: center;
-}
-
+/**BUTTON**/
 button {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: 0.375rem;
+
+    font-family: inherit;
     font-size: 1rem;
     font-weight: 600;
     text-align: center;
     color: #ffffff;
-    background-color: #1d4ed8;
+
+    background-color: #8e7092;
+
+    margin-bottom: 1rem;
     border: 2px solid transparent;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+
     transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-    background-color: #2563eb;
+    background-color: #9691a7;
+
+    cursor: pointer;
 }
 
 button:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 0 4px rgba(142, 112, 146, 0.5);
 }
 
 button:active {
-    background-color: #1e40af;
+    background-color: #9691a7;
+}
+
+/**COLOR PALLET**/
+.colors {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.single-color {
+    position: relative;
+}
+
+.color-display {
+    text-align: center;
+
+    width: 40vw;
+    height: 200px;
+}
+
+.color-text {
+    position: absolute;
+
+    background-color: whitesmoke;
+
+    top: 0;
+    left: 1rem;
+
+    padding: .5rem 1rem;
+    border-radius: 8px;
+}
+
+.lock-icon {
+    position: absolute;
+
+    color: #444;
+
+    background-color: whitesmoke;
+
+    top: 1rem;
+    right: 1rem;
+
+    padding: .5rem;
+    border-radius: 8px;
+}
+
+.lock-icon:hover {
+    opacity: .75;
+    cursor: pointer;
+}
+
+.single-color:first-child .color-display {
+    border-radius: 8px 0 0 0;
+}
+
+.single-color:nth-child(2) .color-display {
+    border-radius: 0 8px 0 0;
+}
+
+.single-color:nth-child(5) .color-display {
+    border-radius: 0 0 0 8px;
+}
+
+.single-color:last-child .color-display {
+    border-radius: 0 0 8px 0;
+}
+
+/***NOTIFICATION***/
+.notif {
+    position: absolute;
+    display: none; /*flex when showing*/
+    justify-content: center;
+
+    text-align: center;
+    color: whitesmoke;
+
+    background-color: #444c67;
+
+    width: 30vw;
+
+    bottom: 2rem;
+    left:0;
+    right:0;
+
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+}
+
+/***MOBILITY***/
+@media screen and (min-width: 768px) {
+    /**MAIN CONTENT**/
+    main {
+        padding: 1rem 1rem 2rem;
+    }
+
+    /**COLORS**/
+    .colors {
+        justify-content: center;
+    }
+
+    .color-display {
+        width: 25vw;
+    }
+
+    .single-color:first-child .color-display {
+        border-radius: 8px 0 0 0;
+    }
+
+    .single-color:nth-child(2) .color-display ,
+    .single-color:nth-child(5) .color-display {
+        border-radius: 0;
+    }
+
+    .single-color:nth-child(3) .color-display {
+        border-radius: 0 8px 0 0;
+    }
+
+    .single-color:nth-child(4) .color-display {
+        border-radius: 0 0 0 8px;
+    }
+
+    .single-color:last-child .color-display {
+        border-radius: 0 0 8px 0;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .color-display {
+        width: 12vw;
+        height: 500px;
+    }
+
+    .single-color:first-child .color-display {
+        border-radius: 8px 0 0 8px;
+    }
+
+    .single-color:nth-child(3) .color-display,
+    .single-color:nth-child(4) .color-display {
+        border-radius: 0;
+    }
+
+    .single-color:last-child .color-display {
+        border-radius: 0 8px 8px 0;
+    }
+
+    .color-text {
+        right: 1rem;
+    }
 }
